@@ -5,6 +5,16 @@ var turns=0;
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
+
+  // reset button
+  $(".btn-default").on("click", function(){
+    $(".box").text("");
+  });
+
+
+
+
+
   $(".box").on("click", function(){
 
   	// X and O should take a turn with % module (even and odd- even for X, odd for O)
