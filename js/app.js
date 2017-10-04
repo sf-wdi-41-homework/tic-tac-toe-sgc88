@@ -11,14 +11,15 @@ $(document).ready(function() {
   	if(turns % 2 === 0){
 
   		$(this).text("X");
-  		turns++ // increments turns variable
+      // increments turns variable
+  		turns++;
   	}else{
 
   		$(this).text("O");
-  		turns++
+  		turns++;
   	}
-      
-      if(  $(".1").text() === "O" && $(".2").text() === "O" && $(".3").text() === "O"
+
+    if( $(".1").text() === "O" && $(".2").text() === "O" && $(".3").text() === "O"
         || $(".1").text() === "X" && $(".2").text() === "X" && $(".3").text() === "X"
         || $(".4").text() === "O" && $(".5").text() === "O" && $(".6").text() === "O"
         || $(".4").text() === "X" && $(".5").text() === "X" && $(".6").text() === "X"
@@ -34,20 +35,11 @@ $(document).ready(function() {
         || $(".1").text() === "X" && $(".5").text() === "X" && $(".9").text() === "X"
         || $(".3").text() === "O" && $(".5").text() === "O" && $(".7").text() === "O"
         || $(".3").text() === "X" && $(".5").text() === "X" && $(".7").text() === "X"
-         
-         
-         
-         
-         
-        ){
-          console.log("You win");
-      }
+    ){
+      console.log("You win");
+    } else if ($(".1").text() !== "" && $(".2").text() !== "" && $(".3").text() !== "" && $(".4").text() !== "" && $(".5").text() !== "" && $(".6").text() !== "" && $(".7").text() !== "" && $(".8").text() !== "" && $(".9").text() !== ""){
+      console.log("no one wins");
+    }
+
   });
 });
-
-
-
-
-
-
-    
