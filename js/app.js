@@ -11,6 +11,7 @@ $(document).ready(function() {
 
   // reset button
   $(".btn-default").on("click", function(){
+    // boxes have to be emty so that we can get ready to set up the game again to be ready be played
     $(".box").text("");
     // we have to set win var to false so then user can play again
     win = false;
@@ -31,7 +32,7 @@ $(document).ready(function() {
         $(this).text("O");
         turns++;
       }
-
+      // need to have if statement for  all posible winning positions for X and O
       if( $(".1").text() === "O" && $(".2").text() === "O" && $(".3").text() === "O"
           || $(".1").text() === "X" && $(".2").text() === "X" && $(".3").text() === "X"
           || $(".4").text() === "O" && $(".5").text() === "O" && $(".6").text() === "O"
@@ -48,14 +49,18 @@ $(document).ready(function() {
           || $(".1").text() === "X" && $(".5").text() === "X" && $(".9").text() === "X"
           || $(".3").text() === "O" && $(".5").text() === "O" && $(".7").text() === "O"
           || $(".3").text() === "X" && $(".5").text() === "X" && $(".7").text() === "X"
-      ){
+      ){// if either X or O wins
         alert("wohoo, you win!");
         win = true;
+        // if no one wins then
       } else if ($(".1").text() !== "" && $(".2").text() !== "" && $(".3").text() !== "" && $(".4").text() !== "" && $(".5").text() !== "" && $(".6").text() !== "" && $(".7").text() !== "" && $(".8").text() !== "" && $(".9").text() !== ""){
-        alert("ups, no one wins");
+        alert("you both suck on this game");
+
       }
     }else{
       // nothing happens box is taken
+      // when box is taken nothing should happen but simple alert;
+      alert("upsy bupsy, I'm taken")
     }
 
 
