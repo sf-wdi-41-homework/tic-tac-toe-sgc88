@@ -49,10 +49,10 @@ $(document).ready(function() {
           || $(".3").text() === "O" && $(".5").text() === "O" && $(".7").text() === "O"
           || $(".3").text() === "X" && $(".5").text() === "X" && $(".7").text() === "X"
       ){
-        console.log("You win");
+        alert("wohoo, you win!");
         win = true;
       } else if ($(".1").text() !== "" && $(".2").text() !== "" && $(".3").text() !== "" && $(".4").text() !== "" && $(".5").text() !== "" && $(".6").text() !== "" && $(".7").text() !== "" && $(".8").text() !== "" && $(".9").text() !== ""){
-        console.log("no one wins");
+        alert("ups, no one wins");
       }
     }else{
       // nothing happens box is taken
