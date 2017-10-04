@@ -1,6 +1,9 @@
 // wait for the DOM to finish loading
 console.log('sanity check');
 var turns=0;
+// win var to keep truck if there is a winner
+var win = false;
+
 
 $(document).ready(function() {
   // all code to manipulate the DOM
@@ -9,6 +12,8 @@ $(document).ready(function() {
   // reset button
   $(".btn-default").on("click", function(){
     $(".box").text("");
+    // we have to set win var to false so then user can play again
+    win = false;
   });
 
 
@@ -16,7 +21,7 @@ $(document).ready(function() {
 
 
   $(".box").on("click", function(){
-    if($(this).text() === ""){
+    if($(this).text() === "" && win === false){
       // X and O should take a turn with % module (even and odd- even for X, odd for O)
       if(turns % 2 === 0){
         $(this).text("X");
@@ -45,6 +50,7 @@ $(document).ready(function() {
           || $(".3").text() === "X" && $(".5").text() === "X" && $(".7").text() === "X"
       ){
         console.log("You win");
+        win = true;
       } else if ($(".1").text() !== "" && $(".2").text() !== "" && $(".3").text() !== "" && $(".4").text() !== "" && $(".5").text() !== "" && $(".6").text() !== "" && $(".7").text() !== "" && $(".8").text() !== "" && $(".9").text() !== ""){
         console.log("no one wins");
       }
